@@ -1,0 +1,12 @@
+header {
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    
+    color: silver;
+    text-align: center;
+}
+
+
+section {
+    margin: 20px;
+}
