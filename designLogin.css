@@ -48,9 +48,8 @@ button:hover {
 }
 
 .registerButton {  
-    background-color:  rgb(19, 19, 19);
-    color: white;
     margin: auto;
+    padding: 5px;
     border: none;
     cursor: pointer;
 }
