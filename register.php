@@ -1,5 +1,25 @@
 <?php
+session_start();
 
+
+$db = mysqli_connect("localhost","root", "", "webprojecthk");
+
+
+    if (isset($_POST['registerBtn'])) {
+        $username = mysqli_real_escape_string($db, $_POST['username']);
+        $email = mysqli_real_escape_string($db, $_POST['email']);
+        $password = mysqli_real_escape_string($db, $_POST['password']);
+        $password = md5($password); //hashira password
+    
+        $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
+        mysqli_query($db, $sql);
+
+        $_SESSION['message'] = "You are now logged in";
+        $_SESSION['username'] = $username;
+        header("location: mainPage.php");
+
+    }
+mysqli_close($db);
 
 ?>
 
@@ -16,7 +36,7 @@
 
 
 <form method="post" action="register.php">
- 
+
 
 <h2 class="center">Register </h2>
 
@@ -26,7 +46,7 @@
     </div>
 
     <div> 
-        <input type="text" placeholder="Enter Username" name="username" required>
+        <input type="text" placeholder="Enter Username" name="username" id="user" required>
     </div> 
 
     <div>  
@@ -42,11 +62,11 @@
     </div>
 
     <div>  
-        <input type="password" placeholder="Enter Password" name="password" required>
+        <input type="password" placeholder="Enter Password" name="password" id="pass" required>
     </div> 
 
     <div class = "loginButton">
-        <button class ="buttonLogin" type="submit" name="register">Register</button>
+        <button class ="buttonLogin" type="submit" id="btn" name="registerBtn">Register</button>
     </div>
   
     </section>
