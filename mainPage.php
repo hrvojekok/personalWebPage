@@ -22,12 +22,8 @@ session_start();
 
 <header>
 </br>
-<<<<<<< HEAD:mainPage.php
     <h1>Welcome to my personal web page
     <?php if(isset($_SESSION['username'])) {echo $_SESSION['username']; } ?>!</h1>
-=======
-    <h1>Welcome to my personal web page <?php echo $_SESSION['username']; ?>!</h1>
->>>>>>> f84211651a3091a8837036532219703de1a4e9f6:mainPage.php
     <p>My name is <b>Hrvoje Kokošarević</b> and  I am a first year Graduate student on FERIT, Osijek.</p>
 </br>
 
