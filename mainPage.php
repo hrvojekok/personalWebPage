@@ -22,8 +22,12 @@ session_start();
 
 <header>
 </br>
+<<<<<<< HEAD:mainPage.php
     <h1>Welcome to my personal web page
     <?php if(isset($_SESSION['username'])) {echo $_SESSION['username']; } ?>!</h1>
+=======
+    <h1>Welcome to my personal web page <?php echo $_SESSION['username']; ?>!</h1>
+>>>>>>> f84211651a3091a8837036532219703de1a4e9f6:mainPage.php
     <p>My name is <b>Hrvoje Kokošarević</b> and  I am a first year Graduate student on FERIT, Osijek.</p>
 </br>
 
@@ -86,6 +90,7 @@ session_start();
     <div><a href="https://www.facebook.com/hrvoje.kokosarevic">~ Facebook ~</a></div>
     <div><a href="register.php"><span class="glyphicon glyphicon-inbox"></span> Contact me</a></div>
 
+<<<<<<< HEAD:mainPage.php
 
 
 
@@ -93,6 +98,10 @@ session_start();
     <div align="right"><h4> <?php if(isset($_SESSION['username'])) {echo 'Username: '; echo $_SESSION['username']; } else { echo 'You are not logged in'; echo '<a href="login.php"></br>Click here to log in </a>'; } ?> </h4>
     <?php if(!isset($_SESSION['username'])) {echo ''; } else { echo '<a href="logout.php">Logout from this webpage</a>'; }?>
     
+=======
+    <div align="right"><h4>User: <?php echo $_SESSION['username']; ?></h4>
+    <a href="logout.php">Logout from this webpage</a>
+>>>>>>> f84211651a3091a8837036532219703de1a4e9f6:mainPage.php
     </div>
 </section>
 
