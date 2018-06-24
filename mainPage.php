@@ -22,7 +22,8 @@ session_start();
 
 <header>
 </br>
-    <h1>Welcome to my personal web page <?php echo $_SESSION['username']; ?>!</h1>
+    <h1>Welcome to my personal web page
+    <?php if(isset($_SESSION['username'])) {echo $_SESSION['username']; } ?>!</h1>
     <p>My name is <b>Hrvoje Kokošarević</b> and  I am a first year Graduate student on FERIT, Osijek.</p>
 </br>
 
@@ -44,10 +45,11 @@ session_start();
                 <li><a href="#Link1"><span class="glyphicon glyphicon-zoom-in"></span> About</a></li>
                 <li><a href="#Link2"><span class="glyphicon glyphicon-briefcase"></span> Work experience</a></li>
                 <li><a href="#Link3"><span class="glyphicon glyphicon-align-left"></span> GitHub</a></li>
+                <li><a href="#Link5"><span class="glyphicon glyphicon-picture"></span> Gallery</a></li>
                 <li><a href="#Link4"><span class="glyphicon glyphicon-user"></span> Social pages</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="register.php"><span class="glyphicon glyphicon-inbox"></span> Contact me</a></li>
+                <li><a href="register.php"><span class="glyphicon glyphicon-inbox"></span> Register to contact me</a></li>
             </ul> 
         </div>
     </div>
@@ -66,13 +68,31 @@ session_start();
     <h2 id="Link3">Github</h2>
     <a href="https://github.com/hrvojekok?tab=repositories">~ Link to my GitHub repositories ~</a>
 
+
+
+    <h2 id="Link5">Gallery</h2>
+   
+        <img src="pic1.jpg" >
+    
+        <img src="pic2.jpg" >
+ 
+        <img src="pic3.jpg" >
+   
+        <img src="pic4.jpg">
+   
+
     <h2 id="Link4">Social pages</h2>
     <div><a href="https://www.linkedin.com/in/hrvoje-koko%C5%A1arevi%C4%87-653bb6164/">~ LinkedIn ~</a></div>
     <div><a href="https://www.facebook.com/hrvoje.kokosarevic">~ Facebook ~</a></div>
     <div><a href="register.php"><span class="glyphicon glyphicon-inbox"></span> Contact me</a></div>
 
-    <div align="right"><h4>User: <?php echo $_SESSION['username']; ?></h4>
-    <a href="logout.php">Logout from this webpage</a>
+
+
+
+
+    <div align="right"><h4> <?php if(isset($_SESSION['username'])) {echo 'Username: '; echo $_SESSION['username']; } else { echo 'You are not logged in'; echo '<a href="login.php"></br>Click here to log in </a>'; } ?> </h4>
+    <?php if(!isset($_SESSION['username'])) {echo ''; } else { echo '<a href="logout.php">Logout from this webpage</a>'; }?>
+    
     </div>
 </section>
 
