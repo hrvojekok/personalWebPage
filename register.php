@@ -31,11 +31,16 @@ mysqli_close($db);
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="designLogin.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+
 </head>
 <body>
 
 
-<form method="post" action="register.php">
+<form method="post" action="register.php" id="myForm">
 
 
 <h2 class="center">Register </h2>

@@ -9,10 +9,13 @@ session_start();
 <title>Hrvoje Kokošarević</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="designMainPage.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="design.css">
+<script  src="animation.js"></script>
+
+
 </head>
 
 
@@ -70,16 +73,34 @@ session_start();
 
 
 
+
+
     <h2 id="Link5">Gallery</h2>
-   
-        <img src="pic1.jpg" >
     
-        <img src="pic2.jpg" >
- 
-        <img src="pic3.jpg" >
-   
-        <img src="pic4.jpg">
-   
+    <p>Click on the images below to enlarge them:</p>
+    
+
+    <div class="row">
+        <div class="column">
+            <img class = "imageAnimation" src = "pic1.jpg" style = "width:100%" onclick = "myFunction(this);">
+        </div>
+        <div class="column">
+            <img class = "imageAnimation" src = "pic2.jpg" style = "width:100%" onclick = "myFunction(this);">
+        </div>
+        <div class="column">
+            <img class = "imageAnimation" src = "pic3.jpg" style = "width:100%" onclick = "myFunction(this);">
+        </div>
+        <div class="column">
+            <img class = "imageAnimation" src = "pic4.jpg" style = "width:100%" onclick = "myFunction(this);">
+        </div>
+    </div>
+
+    <div class="container">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+    <img id="expandedImg" style="width:100%">
+    <div id="imgtext"></div>
+    </div>
+         
 
     <h2 id="Link4">Social pages</h2>
     <div><a href="https://www.linkedin.com/in/hrvoje-koko%C5%A1arevi%C4%87-653bb6164/">~ LinkedIn ~</a></div>
@@ -95,5 +116,7 @@ session_start();
     
     </div>
 </section>
+
+
 
 </body>
