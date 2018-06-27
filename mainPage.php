@@ -112,7 +112,7 @@ session_start();
 
 
     <div align="right"><h4> <?php if(isset($_SESSION['username'])) {echo 'Username: '; echo $_SESSION['username']; } else { echo 'You are not logged in'; echo '<a href="login.php"></br>Click here to log in </a>'; } ?> </h4>
-    <?php if(!isset($_SESSION['username'])) {echo ''; } else { echo '<a href="logout.php">Logout from this webpage</a>'; }?>
+    <?php if(!isset($_SESSION['username'])) {echo ''; } else { echo '<a href="logout.php">Logout from this webpage</a> </br> <a href="deleteUser.php">Delete user</a>'; }?>
     
     </div>
 </section>

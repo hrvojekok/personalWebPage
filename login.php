@@ -19,6 +19,7 @@ $db = mysqli_connect("localhost", "root", "", "webprojecthk");
             header ("location: mainPage.php");
         } else {
             $_SESSION ['message'] = "incorrect username/password";
+            echo 'Incorrect username/password combination!';
         }
         
     }
